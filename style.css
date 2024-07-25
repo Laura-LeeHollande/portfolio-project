@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 html,
@@ -658,7 +659,7 @@ body {
 }
 
 .icons .fa {
-    font-size: 24px;
+    font-size: 23px;
     cursor: pointer;
 }
 
@@ -697,7 +698,7 @@ body {
 }
 
 .icon {
-    font-size: 24px;
+    font-size: 20px;
     padding: 0 16px;
 }
 
