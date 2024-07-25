@@ -8,8 +8,8 @@
 }
 
 html, body {
-    margin: 0; /* Supprime les marges par défaut */
-    padding: 0; /* Supprime le padding par défaut */
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -18,18 +18,17 @@ html, body {
     align-items: center;
     font-family: 'Poppins', sans-serif;
     background-color: #ebe7e7;
-    overflow: hidden; /* Empêche le défilement */
+    overflow: hidden;
 }
 
 body {
-    box-sizing: border-box; /* Assure que padding et border sont inclus dans la largeur et hauteur */
-    min-height: 100vh; /* Assure que le body prend toute la hauteur de la vue */
+    box-sizing: border-box;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 
 .container {
     width: 392px;
@@ -37,13 +36,12 @@ body {
     border-radius: 3px;
     border: 1px solid #dbdbdb;
     overflow: hidden;
-    margin-top: 0; /* Essayez de mettre ce margin à 0 ou ajustez-le selon vos besoins */
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 
 .top_bar {
     width: 100%;
@@ -181,13 +179,26 @@ body {
     background-color: transparent;
 }
 
+/* ------------------------ Default navbar btn order ------------------------ */
+.navbar a[href="#home"] {
+    order: 1;
+}
+
+.navbar a[href="#search"] {
+    order: 2;
+}
+
+.navbar a[href="#profile"] {
+    order: 3;
+}
+
 .navbar a:hover {
     background-color: #1abc9c;
     border: 1px solid #16a085;
     border-radius: 10px;
 }
 
-/* Media queries pour la mise en page responsive */
+/* ---------------------------- START RESPONSIVE ---------------------------- */
 @media (max-width: 768px) {
     .container {
         width: 90%;
@@ -233,15 +244,24 @@ body {
         justify-content: center;
     }
 
-    .navbar-logo {
-        display: none;
-    }
-
     .navbar a {
         padding: 12px;
         font-size: 16px;
         color: #ebe7e7;
         margin: 0 15px;
+    }
+
+/* ---------------------------- Change btn order ---------------------------- */
+    .navbar a[href="#home"] {
+        order: 2;
+    }
+
+    .navbar a[href="#search"] {
+        order: 1;
+    }
+
+    .navbar a[href="#profile"] {
+        order: 3;
     }
 
     .navbar a:hover {
@@ -254,11 +274,11 @@ body {
     .navbar {
         top: 0;
         left: 0;
-        width: 250px; /* Largeur de la barre de navigation */
-        height: 100%; /* Prend toute la hauteur de la page */
-        flex-direction: column; /* Afficher les éléments en colonne */
-        align-items: center; /* Centrer les éléments */
-        border-right: none; /* Supprimer la bordure à droite */
+        width: 250px;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        border-right: none;
         border-bottom: none;
         padding: 20px 0;
         background-color: #fff;
@@ -269,19 +289,20 @@ body {
     }
 
     .navbar a {
-        width: calc(100% - 40px); /* Prendre toute la largeur moins la marge */
-        margin: 10px 0; /* Ajouter de la marge verticale entre les liens */
+        width: calc(100% - 40px);
+        margin: 10px 0;
         padding: 15px 20px;
-        text-align: center; /* Centrer le texte */
+        text-align: center;
     }
 
     .navbar a:hover {
         background-color: #1abc9c;
-        border-radius: 0; /* Retirer le border-radius */
+        border-radius: 0;
         border: none;
     }
 
     .container {
-        margin-left: 300px; /* Ajouter plus d'espace sur le côté gauche */
+        margin-left: 300px;
     }
 }
+/* ----------------------------- END RESPONSIVE ----------------------------- */
