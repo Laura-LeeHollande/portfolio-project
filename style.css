@@ -8,16 +8,28 @@
 }
 
 html, body {
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime le padding par défaut */
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
     background-color: #ebe7e7;
-    overflow: auto;
+    overflow: hidden; /* Empêche le défilement */
 }
+
+body {
+    box-sizing: border-box; /* Assure que padding et border sont inclus dans la largeur et hauteur */
+    min-height: 100vh; /* Assure que le body prend toute la hauteur de la vue */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .container {
     width: 392px;
@@ -25,8 +37,13 @@ html, body {
     border-radius: 3px;
     border: 1px solid #dbdbdb;
     overflow: hidden;
-    margin-top: 63px;
+    margin-top: 0; /* Essayez de mettre ce margin à 0 ou ajustez-le selon vos besoins */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .top_bar {
     width: 100%;
@@ -151,14 +168,8 @@ html, body {
     align-items: center;
     padding: 10px 0;
     text-transform: uppercase;
-    border-bottom: 1px solid #2c3e50;
-}
-
-.navbar img.navbar-logo {
-    margin-left: 10px;
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
+    display: flex;
+    justify-content: center;
 }
 
 .navbar a {
@@ -237,66 +248,40 @@ html, body {
         background-color: transparent;
         border: none;
     }
+}
 
-    @media (max-width: 480px) {
-        .container {
-            width: 90%;
-        }
+@media (min-width: 769px) {
+    .navbar {
+        top: 0;
+        left: 0;
+        width: 250px; /* Largeur de la barre de navigation */
+        height: 100%; /* Prend toute la hauteur de la page */
+        flex-direction: column; /* Afficher les éléments en colonne */
+        align-items: center; /* Centrer les éléments */
+        border-right: none; /* Supprimer la bordure à droite */
+        border-bottom: none;
+        padding: 20px 0;
+        background-color: #fff;
+    }
 
-        .top_bar, .footer {
-            padding: 10px;
-        }
+    .navbar img.navbar-logo {
+        margin: 20px 0;
+    }
 
-        .icons .fa {
-            font-size: 18px;
-        }
+    .navbar a {
+        width: calc(100% - 40px); /* Prendre toute la largeur moins la marge */
+        margin: 10px 0; /* Ajouter de la marge verticale entre les liens */
+        padding: 15px 20px;
+        text-align: center; /* Centrer le texte */
+    }
 
-        .likeCount p,
-        .content p,
-        .comments p {
-            font-size: 10px;
-        }
+    .navbar a:hover {
+        background-color: #1abc9c;
+        border-radius: 0; /* Retirer le border-radius */
+        border: none;
+    }
 
-        .comments_box {
-            height: 40px;
-        }
-
-        .comments_box .icon {
-            font-size: 18px;
-        }
-
-        .comments_box input {
-            padding: 6px;
-        }
-
-        .btn button {
-            padding: 6px;
-            font-size: 12px;
-        }
-
-        .navbar {
-            padding: 5px 0;
-            top: unset;
-            bottom: 0;
-            background-color: #333;
-            display: flex;
-            justify-content: center;
-        }
-
-        .navbar-logo {
-            display: none;
-        }
-
-        .navbar a {
-            padding: 12px;
-            font-size: 16px;
-            color: #ebe7e7;
-            margin: 0 15px;
-        }
-
-        .navbar a:hover {
-            background-color: transparent;
-            border: none;
-        }
+    .container {
+        margin-left: 300px; /* Ajouter plus d'espace sur le côté gauche */
     }
 }
